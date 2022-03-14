@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import './providers/calories_provider.dart';
 
+import './providers/calories_provider.dart';
 import './widgets/drawer.dart';
 import 'widgets/sliver_body.dart';
 import './widgets/plans_widgets.dart';
+import './theme/custom_theme';
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
+    theme: CustomTheme.lightTheme,
     title: 'myfitnesspal',
-    home: HomePage(),
+    home: const HomePage(),
     debugShowCheckedModeBanner: false,
   ));
 }
@@ -22,7 +24,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 3;
+  int _selectedIndex = 1;
 
   void _onItemTapped(int index) {
     setState(() {
@@ -42,7 +44,6 @@ class _HomePageState extends State<HomePage> {
           : null,
       drawer: const SideDrawer(),
       body: Container(
-        color: Colors.black12,
         child: ChangeNotifierProvider<CalProvider>(
           create: (context) => CalProvider(),
           child: _selectedIndex == 3
@@ -88,7 +89,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.black,
+        selectedItemColor: ThemeData.light().primaryColor,
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
       ),

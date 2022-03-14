@@ -92,7 +92,7 @@ class _SideDrawerState extends State<SideDrawer> {
           ),
           ListTile(
             title: const Text('Nutrition'),
-            leading: const Icon(Icons.pie_chart_outlined),
+            leading: const Icon(Icons.pie_chart_outline),
             onTap: () {},
           ),
           ListTile(

@@ -198,13 +198,7 @@ class _DiaryBottomState extends State<DiaryBottom> {
                     primary: Colors.white,
                     onPrimary: Colors.black54,
                   ),
-                  label: const Text('Nutrition')
-                  // onPressed: () {},
-                  // child: const Text('Notes'),
-                  // style: ElevatedButton.styleFrom(
-                  //   primary: Colors.white,
-                  //   onPrimary: Colors.grey,
-                  ,
+                  label: const Text('Nutrition'),
                 ),
               ),
               SizedBox(
@@ -219,13 +213,7 @@ class _DiaryBottomState extends State<DiaryBottom> {
                     primary: Colors.white,
                     onPrimary: Colors.black54,
                   ),
-                  label: const Text('Notes')
-                  // onPressed: () {},
-                  // child: const Text('Notes'),
-                  // style: ElevatedButton.styleFrom(
-                  //   primary: Colors.white,
-                  //   onPrimary: Colors.grey,
-                  ,
+                  label: const Text('Notes'),
                 ),
               )
             ],

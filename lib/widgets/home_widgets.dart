@@ -45,6 +45,8 @@ class LogCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(15))),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
@@ -65,10 +67,10 @@ class LogCard extends StatelessWidget {
             ),
             Row(
               children: const <Widget>[
-                SizedBox(
-                  width: 20,
+                Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Text("Has logged for x days in a row!"),
                 ),
-                Text("Has logged for x days in a row!"),
                 SizedBox(
                   height: 35,
                 ),
@@ -142,24 +144,28 @@ class BlogCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-        child: Card(
-            child: Column(
-      children: [
-        ListTile(
-          title: Text(title),
-          subtitle: Text(subtitle),
-        ),
-        Row(
-          children: [
-            InkWell(
-              child: SizedBox(
-                  height: 250,
-                  width: MediaQuery.of(context).size.width - 10,
-                  child: Image.network(imageUrl, fit: BoxFit.fill)),
-            ),
-          ],
-        ),
-      ],
-    )));
+        child: SizedBox(
+      child: Card(
+          child: Column(
+        children: [
+          ListTile(
+            title: Text(title),
+            subtitle: Text(subtitle),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              InkWell(
+                child: SizedBox(
+                    height: 250,
+                    width: MediaQuery.of(context).size.width - 20,
+                    child: Image.network(imageUrl, fit: BoxFit.fill)),
+              ),
+            ],
+          ),
+          Row(children: [SizedBox(height: 10)])
+        ],
+      )),
+    ));
   }
 }
